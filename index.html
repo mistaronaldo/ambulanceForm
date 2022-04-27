@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Wizard V1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/datepicker.css">
+	<link rel="stylesheet" href="assets/css/animate.min.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/colors/switch.css">
+	<!-- Color Alternatives -->
+	<link href="assets/css/colors/color-2.css" rel="alternate stylesheet" type="text/css" title="color-2">
+	<link href="assets/css/colors/color-3.css" rel="alternate stylesheet" type="text/css" title="color-3">
+	<link href="assets/css/colors/color-4.css" rel="alternate stylesheet" type="text/css" title="color-4">
+	<link href="assets/css/colors/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
+
+	<link href="assets/css/timepicker.css" rel="stylesheet" type="text/css" />
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/timepicker.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+
+
+
+	<div class="wrapper">
+		<div class="steps-area steps-area-fixed">
+			<div class="image-holder">
+				<img src="assets/img/side-img.jpg" alt="">
+			</div>
+			<div class="steps clearfix">
+				<ul class="tablist multisteps-form__progress">
+					<li class="multisteps-form__progress-btn js-active current">
+						<span>1</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>2</span>
+					</li>
+					<li class="multisteps-form__progress-btn">
+						<span>3</span>
+					</li>
+					<li class="multisteps-form__progress-btn last">
+						<span>4</span>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		<form class="multisteps-form__form" id="wizard" method="POST" action="/">
+			<div class="form-area position-relative">
+				<!-- div 1 -->
+				<div class="multisteps-form__panel js-active" data-animation="slideHorz">
+					<div class="wizard-forms">
+						<div class="inner pb-100 clearfix">
+							<div class="form-content pera-content">
+								<div class="step-inner-content">
+									<!-- style="min-width: 720px;"> -->
+									<!-- <span class="step-no">Step 1</span> -->
+									<h2>Qualit Ambulance Booking</h2>
+
+									<div class="step-content-field">
+
+
+										<h3>Collection Date</h3>
+										<div class="date-picker date datepicker">
+											<input type="text" name="collectionDate" class="form-control ">
+											<div class="input-group-append"><span>ADD TIME</span></div>
+										</div>
+										<p class="pt-4">Requested Approx. Time of Collection</p>
+										<input name="timeofcollection" class="form-control" id="timepicker"
+											width="276" />
+
+
+										<h2>Commissioner Details</h2>
+
+										<p class="form-text text-muted helper ml-2"> Person filling in the form</p>
+
+										<div class="form-inner-area">
+											<input type="text" name="full_name" class="form-control " minlength="2"
+												placeholder="Your Name">
+
+
+											<input type="email" name="email" class="form-control "
+												placeholder="Email Address *">
+
+											<input type="text" name="phone" placeholder="Phone">
+											<input class="" type="number" name="purchaseOrder"
+												placeholder="Purchase Order Number OR Budget Code">
+
+
+
+
+											<h2>Patient Collection Location</h2>
+											<p>Collect Addresses</p>
+
+											<input type="text" name="street_address" class="form-control "
+												placeholder="Street Address">
+
+											<input type="text" name="address_line2" class="form-control "
+												placeholder="Address Line 2">
+											<p class="form-text text-muted helper ml-2"></p>
+
+
+											<input type="text" name="city" class="form-control " placeholder="City">
+											<input type="text" name="state_region" class="form-control "
+												placeholder="State/Region/Province">
+											<input type="text" name="postal_zipcode" class="form-control "
+												placeholder="Postal / Zip Code">
+
+											<div class="budget-area">
+												<p><i class="fas fa-dollar-sign"></i> Country</p>
+												<select name="Country">
+													<option>Zimpabwe</option>
+													<option>South Africa</option>
+													<option>Mexico</option>
+													<option>Namibia</option>
+													<option>Other</option>
+												</select>
+											</div>
+
+
+											<input type="text" name="collectionContact" class="form-control "
+												placeholder="Collection Contact">
+
+											<input type="text" name="CollectionWardPhone" class="form-control "
+												placeholder="Collection Ward Phone">
+
+											<h2>Patient Details</h2>
+
+											<input type="text" name="fullPatientname" class="form-control "
+												minlength="2" placeholder="Your Name">
+										</div>
+										<div class="step-content-field">
+
+											<div class="date-picker date datepicker">
+												<input type="text" name="PatientDOB" class="form-control ">
+												<div class="input-group-append"><span>ADD Date</span></div>
+											</div>
+
+										</div>
+										<div class="form-inner-area pt-4">
+											<input type="text" name="nhsNumber" class="form-control "
+												placeholder="NHS Number ">
+											<p class="form-text text-muted helper ml-2">If not known patient number</p>
+											<input type="text" name="patientWeight" class="form-control "
+												placeholder="Patient Weight">
+											<p class="form-text text-muted helper ml-2">Either in Stone or KG</p>
+
+										</div>
+
+
+
+										<div class="gender-selection">
+											<h3>Patient Gender:</h3>
+											<label>
+												<input type="radio" name="patientGender" value="Male">
+												<span class="checkmark"></span>Male
+											</label>
+											<label>
+												<input type="radio" name="patientGender" value="Female">
+												<span class="checkmark"></span>Female
+											</label>
+											<label>
+												<input type="radio" name="patientGender" value="Other">
+												<span class="checkmark"></span>Other
+											</label>
+										</div>
+										<div class="gender-selection">
+											<h3>Is the patient aware of the transport?:</h3>
+											<label>
+												<input type="radio" name="transportawareness" value="Yes">
+												<span class="checkmark"></span>Yes
+											</label>
+											<label>
+												<input type="radio" name="transportawareness" value="No">
+												<span class="checkmark"></span>No
+											</label>
+
+										</div>
+
+										<div class="gender-selection">
+											<h3>Does the patient require mechanical restraint?</h3>
+											<label>
+												<input id="condition2" type="radio" name="requireMechanicalRestraint"
+													value="Yes">
+												<span class="checkmark"></span>Yes
+											</label>
+											<label>
+												<input id="condition2" type="radio" name="requireMechanicalRestraint"
+													value="No">
+												<span class="checkmark"></span>No
+											</label>
+										</div>
+
+
+										<div class="conditional"
+											data-condition="#condition2 && requireMechanicalRestraint == 'Yes'">
+											<div class="form-inner-area">
+												<label>
+													<h3>State Reason for Mechanical Restraint</h3>
+												</label>
+												<input type="text" name="reasonForRestraint">
+											</div>
+										</div>
+
+
+
+
+
+
+
+									</div>
+
+
+
+
+								</div>
+
+
+							</div>
+						</div>
+						<!-- /.inner -->
+						<div class="actions">
+							<ul>
+								<li class="disable" aria-disabled="true"><span class="js-btn-next" title="NEXT">Backward
+										<i class="fa fa-arrow-right"></i></span></li>
+								<li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- div 2 -->
+
+			<!-- div 3 -->
+			<div class="multisteps-form__panel" data-animation="slideHorz">
+				<div class="wizard-forms">
+					<div class="inner pb-100 clearfix">
+						<div class="form-content pera-content">
+							<div class="step-inner-content">
+
+
+								<span class="step-no bottom-line">Step 2</span>
+								<div class="step-progress float-right">
+									<span>2 of 5 completed</span>
+									<div class="step-progress-bar">
+										<div class="progress">
+											<div class="progress-bar"></div>
+										</div>
+									</div>
+								</div>
+								<h2>Restraint Risk Assessment</h2>
+								<div class="budget-area">
+									<p>Risk To Self</p>
+									<small id="passwordHelpBlock" class="form-text text-muted">Tick ALL That
+										Apply</small>
+
+									<div class="opti-list">
+										<ul class="d-grid">
+											<li class="bg-white active"><input type="checkbox" name="RisksToSelf"
+													value="Yes">Expressing Suicidal Ideas?</li>
+											<li class="bg-white"><input type="checkbox" name="RisksToSelf"
+													value="Yes">Misuse of
+												Drugs/Alcohol/ Withdrawal?</li>
+											<li class="bg-white"><input type="checkbox" name="RisksToSelf"
+													value="Yes">Intent to
+												Self Harm?</li>
+											<li class="bg-white"><input type="checkbox" name="RisksToSelf"
+													value="Yes">Helplessness?</li>
+											<li class="bg-white"><input type="checkbox" name="RisksToSelf"
+													value="Yes">Major
+												Illness or Disability</li>
+											<li class="bg-white"><input type="checkbox" name="RisksToSelf"
+													value="Yes">Distressed?</li>
+											<li class="bg-white"><input type="checkbox" name="RisksToSelf"
+													value="Yes">Exhibiting
+												self neglect?</li>
+											<li class="bg-white"><input type="checkbox" name="RisksToSelf"
+													value="Yes">Risk of
+												Wandering?</li>
+											<li class="bg-white"><input type="checkbox" name="RisksToSelf"
+													value="Yes">Unsteady /
+												Liable to Fall?</li>
+
+										</ul>
+									</div>
+								</div>
+								<div class="budget-area">
+									<p>Risk to Others</p>
+									<small id="passwordHelpBlock" class="form-text text-muted">Tick ALL That
+										Apply</small>
+
+									<div class="opti-list">
+										<ul class="d-grid">
+											<li class="bg-white active"><input type="checkbox" name="code_opti1"
+													value="Yes">Expressing intent to harm?</li>
+											<li class="bg-white"><input type="checkbox" name="code_opti2"
+													value="Yes">Under the
+												influence of Alcohol and / or Drugs?</li>
+											<li class="bg-white"><input type="checkbox" name="code_opti3"
+													value="Yes">Paranoid
+												Delusions?</li>
+											<li class="bg-white"><input type="checkbox" name="code_opti4"
+													value="Yes">Aggressive
+												Behaviour?</li>
+											<li class="bg-white"><input type="checkbox" name="code_opti5"
+													value="Yes">Sexually
+												inappropriate behaviour?</li>
+											<li class="bg-white"><input type="checkbox" name="code_opti6"
+													value="Yes">Violent
+												Behaviour?</li>
+											<li class="bg-white"><input t ype="checkbox" name="code_opti7"
+													value="Yes">Prior
+												History of Violence?</li>
+
+										</ul>
+									</div>
+								</div>
+
+								<div class="gender-selection">
+									<h3>Are Mental Health Services Involved?</h3>
+									<label>
+										<input type="radio" name="areMentalHealthServicesInvolved" value="Yes">
+										<span class="checkmark"></span>Yes
+									</label>
+									<label>
+										<input type="radio" name="areMentalHealthServicesInvolved" value="No">
+										<span class="checkmark"></span>No
+									</label>
+
+								</div>
+
+								<div class="gender-selection">
+									<h3>Is the patient under section?</h3>
+									<label>
+										<input type="radio" name="isThePatientUnderSection" value="Yes">
+										<span class="checkmark"></span>Yes
+									</label>
+									<label>
+										<input type="radio" name="isThePatientUnderSection" value="No">
+										<span class="checkmark"></span>No
+									</label>
+
+								</div>
+
+								<div class="upload-documents">
+									<h3>You can upload the section paperwork here</h3>
+									<div class="upload-araa bg-white">
+										<input type="hidden" value="" name="fileContent" id="fileContent">
+										<input type="hidden" value="" name="filename" id="filename">
+										<div class="upload-icon float-left">
+											<i class="fas fa-cloud-upload-alt"></i>
+										</div>
+										<div class="upload-text">
+											<span>( File accepted: jpg. png/ docx -
+												Max file size : 150kb for demo limit )</span>
+										</div>
+										<div class="upload-option text-center">
+											<label for="attach">Upload The Documents</label>
+											<input id="attach" style="visibility:hidden;" type="file">
+										</div>
+									</div>
+								</div>
+
+								<h3>Are there any medical problems or disabilities we should be aware of?</h3>
+								<div class="comment-box">
+									<textarea name="medicalProblemsWeShouldKnow" class=""
+										placeholder="Are there any medical problems or disabilities we should be aware of?"></textarea>
+								</div>
+
+								<div class="gender-selection">
+									<h3>Has a Safeguarding Referral Been Made?</h3>
+									<label>
+										<input type="radio" name="HasASfGuardBnMade" value="Yes">
+										<span class="checkmark"></span>Yes
+									</label>
+									<label>
+										<input type="radio" name="HasASfGuardBnMade" value="No">
+										<span class="checkmark"></span>No
+									</label>
+
+								</div>
+
+								<div class="gender-selection">
+									<h3>Has the Patient Given Consent?</h3>
+									<label>
+										<input type="radio" name="hasThePatientGivenConsent" value="Yes">
+										<span class="checkmark"></span>Yes
+									</label>
+									<label>
+										<input type="radio" name="hasThePatientGivenConsent" value="No">
+										<span class="checkmark"></span>No
+									</label>
+
+								</div>
+
+
+
+
+							</div>
+						</div>
+					</div>
+					<!-- ./inner -->
+					<div class="actions">
+						<ul>
+							<li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span>
+							</li>
+							<li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- div 4 -->
+			<div class="multisteps-form__panel" data-animation="slideHorz">
+				<div class="wizard-forms">
+					<div class="inner pb-100 clearfix">
+						<div class="form-content pera-content">
+							<div class="step-inner-content">
+
+
+								<span class="step-no bottom-line">Step 3</span>
+								<div class="step-progress float-right">
+									<span>3 of 5 completed</span>
+									<div class="step-progress-bar">
+										<div class="progress">
+											<div class="progress-bar" style="width:40%"></div>
+										</div>
+									</div>
+								</div>
+
+								<h2>Journey Details</h2>
+								<div class="step-content-area">
+									<div class="budget-area">
+										<p><i class=""></i> What Ambulance do you require? </p>
+										<select name="requredAmbulance">
+											<option>Secure Ambulance with a Cell(seated only-no stretcher)</option>
+											<option>Emergency Ambulance NO Cell (with a stretcher)</option>
+											<option>Ambulance Car-Seated (must be low risk)</option>
+										</select>
+									</div>
+									<div class="budget-area">
+										<h3> Type of Journey?</h3>
+										<select name="typeofJourney">
+											<option>Select</option>
+											<option>Hospital to Secure Unit</option>
+											<option>Secure unit to Secure unit</option>
+											<option>PICU to Secure unit</option>
+											<option>Secure to PICU - Increased Risk</option>
+										</select>
+									</div>
+									<div class="form-inner-area">
+										<div class="comment-box">
+											<p class="ownParagraph"><i class=""></i> Accompanying Staff Details (if
+												required)</p>
+											<textarea name="AccompanyingStaffDetails" placeholder="Name, Grade... Etc"></textarea>
+										</div>
+									</div>
+
+									<div class="gender-selection">
+										<h3>Is an RMN Travelling with the Patient?</h3>
+										<label>
+											<input type="radio" name="isRMNtrvlWithThePatient" value="Yes">
+											<span class="checkmark"></span>Yes
+										</label>
+										<label>
+											<input type="radio" name="isRMNtrvlWithThePatient" value="No">
+											<span class="checkmark"></span>No
+										</label>
+
+									</div>
+									<div class="gender-selection">
+										<h3>Destination Requirements </h3>
+										<label>
+											<input type="radio" name="destinationRequirements" value="Drop Off Only">
+											<span class="checkmark"></span>Drop Off Only
+										</label>
+										<label>
+											<input type="radio" name="destinationRequirements"
+												value="Drop Off Pt and Return Staff">
+											<span class="checkmark"></span>Drop Off Pt and Return Staff
+										</label>
+										<label>
+											<input type="radio" name="destinationRequirements" value="Wait and Return">
+											<span class="checkmark"></span>Wait and Return
+										</label>
+									</div>
+
+									<div class="budget-area pt-5">
+										<h3 style="font-size: 22px;">Type of Journey?</h3>
+										<select name="typeofJourney">
+											<option>Select </option>
+											<option>2 Inc Driver (no history of aggression)</option>
+											<option>Secure unit to Secure unit</option>
+											<option>3 Inc Driver (history of aggression)</option>
+											<option>4 Inc Driver (hitory of and currently aggressive)</option>
+										</select>
+									</div>
+
+									<p>Collect Addresses</p>
+
+									<div class="form-inner-area">
+										<input type="text" name="DeliveryStreet_address" class="form-control "
+											placeholder="Street Address">
+
+										<input type="text" name="DeliveryAddress_line2" class="form-control "
+											placeholder="Address Line 2">
+										<p class="form-text text-muted helper ml-2"></p>
+
+
+										<input type="text" name="DeliveryCity" class="form-control " placeholder="City">
+										<input type="text" name="DeliveryState_region" class="form-control "
+											placeholder="State/Region/Province">
+										<input type="text" name="DeliveryPostal_zipcode" class="form-control "
+											placeholder="Postal / Zip Code">
+
+
+										<input type="text" name="deliveryContact" class="form-control "
+											placeholder="Delivery Contact ">
+
+										<input type="text" name="deliveryTelephone" class="form-control "
+											placeholder="Delivery Telephone ">
+
+									</div>
+
+									<div class="comment-box">
+										<p><i class="fas fa-comments"></i> Extra Delivery Info?</p>
+										<textarea name="extraDeliveryinfo" placeholder="Your Content Here"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.inner -->
+					<div class="actions">
+						<ul>
+							<li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span>
+							</li>
+							<li><span class="js-btn-next" title="NEXT">NEXT <i class="fa fa-arrow-right"></i></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- div 5 -->
+			<div class="multisteps-form__panel" data-animation="slideHorz">
+				<div class="wizard-forms">
+					<div class="inner pb-100 clearfix">
+						<div class="form-content pera-content">
+							<div class="step-inner-content">
+
+								<span class="step-no bottom-line">Step 4</span>
+								<div class="step-progress float-right">
+									<span>4 of 5 completed</span>
+									<div class="step-progress-bar">
+										<div class="progress">
+											<div class="progress-bar" style="width:70%"></div>
+										</div>
+									</div>
+								</div>
+
+								<h2>Complete Final Step</h2>
+								<p>Billing Information</p>
+								<div class="step-content-field">
+									<div class="form-inner-area">
+										<input type="email" name="BillingEmail" class="form-control "
+											placeholder="Billing Email Address - Who do we send the invoice to?">
+
+										<input type="text" name="billingPhone" class="form-control "
+											placeholder="Billing Phone Number">
+
+										<!-- <p class="form-text text-muted helper ml-2"></p> -->
+
+
+										<input type="text" name="authority" class="form-control "
+											placeholder="Authority">
+
+
+									</div>
+
+									<div class="comment-box">
+										<textarea name="otherinvoicingrequirements" placeholder="
+										Any other invoicing requirements?"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.inner -->
+					<div class="actions">
+						<ul>
+							<li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span>
+							</li>
+							<li><button class="SubmitThishit" type="submit" title="NEXT">SUBMIT <i class="fa fa-arrow-right"></i></button>
+							</li>
+						</ul>
+					</div>
+					<!-- /.inner -->
+				</div>
+			</div>
+			<!-- Real 5 -->
+			
+	</div>
+	</form>
+	</div>
+	<script>
+		$('#timepicker').timepicker({
+			uiLibrary: 'bootstrap4'
+		});
+	</script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
+	</script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/conditionize.flexible.jquery.min.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/switch.js"></script>
+
+	<script>
+		$("#files").change(function () {
+			filename = this.files[0].name
+			// console.log(filename);
+		});
+
+		function UploadFile() {
+			var reader = new FileReader();
+			var file = document.getElementById('attach').files[0];
+			reader.onload = function () {
+				document.getElementById('fileContent').value = reader.result;
+				document.getElementById('filename').value = file.name;
+				document.getElementById('wizard').submit();
+			}
+			reader.readAsDataURL(file);
+		}
+
+		$(document).ready(function () {
+			$('.conditional').conditionize();
+		});
+	</script>
+</body>
+
+</html>
